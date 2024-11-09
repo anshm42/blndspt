@@ -1,5 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage.tsx";
 function App() {
-  return <div>hello World</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
