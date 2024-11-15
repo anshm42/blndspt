@@ -1,21 +1,36 @@
 import React from "react";
 import "./ItemPage.css";
+import demo from "./assets/demo.png";
 
 export default function ItemPage() {
   return (
     <>
-      <div className="container">
-        <div className="content-container">
-          <div className="topcontainer">
-            <div className="logo">Logo</div>
-            <div className="header-item">BLNDSPT</div>
-            <button className="cart">Cart</button>
-          </div>
-          <div className="items">
-            <div className="item-1">Item 1</div>
-            <div className="item-2">Item 2</div>
-            <div className="item-3">Item 3</div>
-            <div className="item 4">Item 4</div>
+      <div className="container-itempage">
+        <div className="item_and_desc">
+          <img className="item-pic" src={demo} />
+          <div className="sidebar">
+            <div className="item-name">GORDONS HOODIE</div>
+            <div className="price">$300 CAD</div>
+            <div className="size-container">
+              <div className="size">Size</div>
+              <div className="size-buttons">
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+              </div>
+            </div>
+            <div className="quantity">Quantity</div>
+            <div className="quantity-button">Quantity Button</div>
+            <button className="addtocart">Add To Cart</button>
+            <div className="item-description">
+              <ul className="item-list">
+                <li>Hoodie</li>
+                <li>Content: 65% Cotton & 35% Polyester fleece r</li>
+                <li>Relaxed fit</li>
+                <li>Heavyweight brushed back fleece</li>
+                <li>All sales final, no returns or exchanges</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
