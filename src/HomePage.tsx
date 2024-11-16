@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
       <div className="menu-container">
-        <div className="logo">BLNDSPT</div>
+        <div className="logo">BLNDSPT+</div>
         <div className="shop-menu-container">
           <div className="shop-menu">
             <Link to="/shop" className="shop-link">
