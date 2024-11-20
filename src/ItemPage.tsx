@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ItemPage.css";
 import demo from "./assets/demo.png";
 
 export default function ItemPage() {
+  const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
+  function handleSizeButton(size) {
+    setSelectedSize(size);
+  }
+
   return (
     <>
       <div className="container-itempage">
@@ -14,9 +19,17 @@ export default function ItemPage() {
             <div className="size-container">
               <div className="size">Size</div>
               <div className="size-buttons">
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
+                {["S", "M", "L"].map((size) => (
+                  <button
+                    key={size}
+                    className={`item-button ${
+                      selectedSize === size ? "pressed" : ""
+                    }`}
+                    onClick={() => handleSizeButton(size)}
+                  >
+                    {size}
+                  </button>
+                ))}
               </div>
             </div>
             <div className="quantity">Quantity</div>
