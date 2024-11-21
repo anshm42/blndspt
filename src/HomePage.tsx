@@ -13,6 +13,7 @@ export default function HomePage() {
               SHOP
             </Link>
           </div>
+
           <div>
             <Link to="/shop" className="shop-link">
               ABOUT
@@ -20,12 +21,12 @@ export default function HomePage() {
           </div>
           <div>
             <Link to="/shop" className="shop-link">
-              CONTACT
+              LOG IN
             </Link>
           </div>
           <div>
             <Link to="/shop" className="shop-link">
-              MAILING LIST
+              CONTACT
             </Link>
           </div>
         </div>

@@ -7,6 +7,17 @@ export default function ItemPage() {
   function handleSizeButton(size) {
     setSelectedSize(size);
   }
+  const [quantity, setQuantity] = useState(1);
+
+  const increment = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
 
   return (
     <>
@@ -33,7 +44,19 @@ export default function ItemPage() {
               </div>
             </div>
             <div className="quantity">Quantity</div>
-            <div className="quantity-button">Quantity Button</div>
+            <div className="quantity-button">
+              <button
+                onClick={decrement}
+                disabled={quantity <= 1}
+                className="quan plus"
+              >
+                -
+              </button>
+              <span>{quantity}</span>
+              <button onClick={increment} className="quan min">
+                +
+              </button>
+            </div>
             <button className="addtocart">Add To Cart</button>
             <div className="item-description">
               <ul className="item-list">

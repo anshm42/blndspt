@@ -43,3 +43,16 @@
 .item-button.pressed {
   box-shadow: 2px 2px 2px black;
 }
+button {
+  all: unset;
+}
+
+.quantity-button {
+  width: fit-content;
+  display: flex;
+  gap: 2vw;
+  font-size: 1.2em;
+}
+
+.quan {
+}
