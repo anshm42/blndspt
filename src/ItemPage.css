@@ -1,13 +1,58 @@
-.container {
-  display: flex;
-  justify-content: center;
+.item-name {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.topcontainer {
+.sidebar {
   display: flex;
-  width: 90vw;
-  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  gap: 2vh;
+}
+.item-pic {
+  width: 60%;
+  height: 100%;
+  border: 2px solid black;
 }
 
-.header-item {
+.item_and_desc {
+  display: flex;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 1vw;
+}
+
+.size-container {
+  display: flex;
+  flex-direction: column;
+}
+.item-button {
+  all: unset;
+  cursor: pointer; /* Adds the hand cursor when hovering */
+  padding: 2% 4%;
+  border: 1px solid black;
+  text-align: center;
+  transition: transform 0.2s ease; /* Smooth animation */
+}
+.item-button:hover {
+  transform: scale(1.1); /* Enlarges the button by 10% */
+}
+
+.item-button.pressed {
+  box-shadow: 2px 2px 2px black;
+}
+button {
+  all: unset;
+}
+
+.quantity-button {
+  width: fit-content;
+  display: flex;
+  gap: 2vw;
+  font-size: 1.2em;
+}
+
+.quan {
 }
