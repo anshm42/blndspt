@@ -15,7 +15,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <Link to="/shop" className="shop-link">
+            <Link to="/about-us" className="contact-link">
               ABOUT
             </Link>
           </div>
@@ -25,7 +25,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div>
-            <Link to="/shop" className="shop-link">
+            <Link to="/contact" className="shop-link">
               CONTACT
             </Link>
           </div>
