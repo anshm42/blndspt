@@ -1,3 +1,9 @@
+.container-itempage {
+  height: 100vh;
+  flex: 1;
+  position: relative;
+}
+
 .item-name {
   font-weight: bold;
   font-size: 1.5rem;
@@ -11,8 +17,11 @@
 }
 
 .item-pic {
-  width: 60%;
-  border-right: 1px solid black;
+  width: 100%;
+}
+
+.images {
+  width: 100%;
 }
 
 .item_and_desc {
@@ -108,12 +117,33 @@ button {
   flex-direction: column;
 }
 .sizing-con {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(182, 181, 181);
   padding: 20px;
 }
 
 .sizing-arrow {
   display: flex;
   justify-content: space-between;
+}
+
+.pictures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 1vh;
+}
+.side-pic {
+  width: 5vw;
+  height: auto;
+  border-radius: 2px;
+}
+
+.item-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  position: relative;
 }
