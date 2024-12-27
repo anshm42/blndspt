@@ -6,16 +6,17 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   gap: 2vh;
 }
+
 .item-pic {
   width: 60%;
-  height: 100%;
-  border: 2px solid black;
+  border-right: 1px solid black;
 }
 
 .item_and_desc {
+  border: 1px solid black;
   display: flex;
 }
 
@@ -27,6 +28,7 @@
 .size-container {
   display: flex;
   flex-direction: column;
+  gap: 1vh;
 }
 .item-button {
   all: unset;
@@ -35,6 +37,7 @@
   border: 1px solid black;
   text-align: center;
   transition: transform 0.2s ease; /* Smooth animation */
+  border-radius: 3px;
 }
 .item-button:hover {
   transform: scale(1.1); /* Enlarges the button by 10% */
@@ -48,11 +51,69 @@ button {
 }
 
 .quantity-button {
+  border: 1px solid black;
   width: fit-content;
   display: flex;
   gap: 2vw;
-  font-size: 1.2em;
+  font-size: 1em;
+  padding: 2%;
+  cursor: pointer;
+  border-radius: 5px;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
-.quan {
+.addtocart {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 4%;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.quan-plus,
+.quan-min {
+  height: auto;
+  width: 20px;
+  text-align: center;
+}
+
+.quantity-con2 {
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.button1 {
+  background-color: blue;
+  width: 5vw;
+  height: auto;
+  text-align: center;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.side-con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sizing-con {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.sizing-arrow {
+  display: flex;
+  justify-content: space-between;
 }
