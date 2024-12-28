@@ -9,7 +9,6 @@ import Contact from "./Contact.tsx";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <div>
         <Routes>
           <Route index path="/" element={<HomePage />} />

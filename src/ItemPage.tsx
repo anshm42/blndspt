@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemPage.css";
 import demo from "./assets/demo.png";
 import Footer from "./Footer";
+import NavbarShop from "./NavbarShop";
 
 export default function ItemPage() {
   const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
@@ -47,6 +48,7 @@ export default function ItemPage() {
 
   return (
     <>
+      <NavbarShop />
       <div className="item-page-container">
         <div className="container-itempage">
           <div className="item_and_desc">
@@ -148,7 +150,6 @@ export default function ItemPage() {
                     style={{
                       marginTop: "10px",
                       padding: "10px",
-                      border: "1px solid black",
                       borderRadius: "5px",
                       display: "inline-block",
                     }}
@@ -187,6 +188,7 @@ export default function ItemPage() {
                       padding: "10px",
                       borderRadius: "5px",
                       display: "block",
+                      borderBottom: "none",
                     }}
                   >
                     <img
