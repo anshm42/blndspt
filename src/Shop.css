@@ -1,0 +1,41 @@
+.shop-con {
+  margin-top: 3vh;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: flex-start;
+  height: 80vh;
+}
+
+.items-con {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap; /* Ensures items wrap if the viewport is smaller */
+}
+
+.item-con-1 {
+  width: 20vw; /* Set a consistent width for each item */
+  height: 30vh; /* Set a consistent height for each item */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.item-png {
+  width: 100%; /* Ensures the image fills the container's width */
+  height: auto;
+  object-fit: cover; /* Ensures the image scales without distortion */
+}
+
+.item-desc {
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+}
