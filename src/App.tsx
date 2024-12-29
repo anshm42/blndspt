@@ -6,6 +6,7 @@ import ItemPage from "./ItemPage.tsx";
 import AboutUs from "./AboutUs.tsx";
 import Shop from "./Shop.tsx";
 import Contact from "./Contact.tsx";
+import Cart from "./Cart.tsx";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/item-page" element={<ItemPage />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </BrowserRouter>
