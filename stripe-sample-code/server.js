@@ -9,24 +9,26 @@ app.use(express.static("public"));
 const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
-  const { items } = req.body;
-
-  // Map the items from the request body to Stripe's line_items format
-  const lineItems = items.map((item) => ({
-    price: item.id,
-    quantity: item.quantity,
-  }));
-
   const session = await stripe.checkout.sessions.create({
     ui_mode: "embedded",
     line_items: [
       {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
         price: "price_1QLaQOHDuUsEP7LqfouNM1W4",
-        quantity: 1,
+        adjustable_quantity: {
+          enabled: true,
+          minimum: 1,
+          maximum: 10,
+        },
+        quantity: 9,
       },
       {
         price: "price_1QbVwEHDuUsEP7Lq6R1qnWk6",
+        adjustable_quantity: {
+          enabled: true,
+          minimum: 1,
+          maximum: 10,
+        },
         quantity: 1,
       },
     ],
