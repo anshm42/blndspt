@@ -9,6 +9,14 @@ app.use(express.static("public"));
 const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
+  const { items } = req.body;
+
+  // Map the items from the request body to Stripe's line_items format
+  const lineItems = items.map((item) => ({
+    price: item.id,
+    quantity: item.quantity,
+  }));
+
   const session = await stripe.checkout.sessions.create({
     ui_mode: "embedded",
     line_items: [
