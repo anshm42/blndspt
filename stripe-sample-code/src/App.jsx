@@ -21,7 +21,7 @@ const stripePromise = loadStripe(
 const CheckoutForm = () => {
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
-    const quantity1 = 2;
+    const quantity1 = 4;
     const quantity2 = 4;
     return fetch("/create-checkout-session", {
       method: "POST",

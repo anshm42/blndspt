@@ -11,6 +11,31 @@ const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
   const { quantity1, quantity2 } = req.body; // Extract quantities from the request body
+  const line_items = [];
+  if (quantity1 > 0) {
+    line_items.push({
+      price: "price_1QLaQOHDuUsEP7LqfouNM1W4", // First product
+      adjustable_quantity: {
+        enabled: true,
+        minimum: 1,
+        maximum: 10,
+      },
+      quantity: quantity1,
+    });
+  }
+
+  // Conditionally add the second item
+  if (quantity2 > 0) {
+    line_items.push({
+      price: "price_1QbVwEHDuUsEP7Lq6R1qnWk6", // Second product
+      adjustable_quantity: {
+        enabled: true,
+        minimum: 1,
+        maximum: 10,
+      },
+      quantity: quantity2,
+    });
+  }
 
   const session = await stripe.checkout.sessions.create({
     shipping_address_collection: {
@@ -18,27 +43,7 @@ app.post("/create-checkout-session", async (req, res) => {
     },
 
     ui_mode: "embedded",
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1QLaQOHDuUsEP7LqfouNM1W4",
-        adjustable_quantity: {
-          enabled: true,
-          minimum: 1,
-          maximum: 10,
-        },
-        quantity: quantity1,
-      },
-      {
-        price: "price_1QbVwEHDuUsEP7Lq6R1qnWk6",
-        adjustable_quantity: {
-          enabled: true,
-          minimum: 1,
-          maximum: 10,
-        },
-        quantity: quantity2,
-      },
-    ],
+    line_items: line_items,
     mode: "payment",
     return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
   });
