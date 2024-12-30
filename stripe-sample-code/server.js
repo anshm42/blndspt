@@ -10,6 +10,10 @@ const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
+    shipping_address_collection: {
+      allowed_countries: ["US", "CA"],
+    },
+
     ui_mode: "embedded",
     line_items: [
       {
