@@ -19,10 +19,13 @@ const stripePromise = loadStripe(
 );
 
 const CheckoutForm = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const quantity1 = queryParams.get("quantity1");
+  const quantity2 = queryParams.get("quantity2");
+
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
-    const quantity1 = 4;
-    const quantity2 = 4;
+
     return fetch("/create-checkout-session", {
       method: "POST",
       headers: {
