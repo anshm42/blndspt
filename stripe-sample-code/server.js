@@ -5,10 +5,13 @@ const stripe = require("stripe")(
 const express = require("express");
 const app = express();
 app.use(express.static("public"));
+app.use(express.json());
 
 const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
+  const { quantity1, quantity2 } = req.body; // Extract quantities from the request body
+
   const session = await stripe.checkout.sessions.create({
     shipping_address_collection: {
       allowed_countries: ["US", "CA"],
@@ -24,7 +27,7 @@ app.post("/create-checkout-session", async (req, res) => {
           minimum: 1,
           maximum: 10,
         },
-        quantity: 9,
+        quantity: quantity1,
       },
       {
         price: "price_1QbVwEHDuUsEP7Lq6R1qnWk6",
@@ -33,7 +36,7 @@ app.post("/create-checkout-session", async (req, res) => {
           minimum: 1,
           maximum: 10,
         },
-        quantity: 1,
+        quantity: quantity2,
       },
     ],
     mode: "payment",
