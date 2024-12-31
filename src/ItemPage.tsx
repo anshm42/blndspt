@@ -3,6 +3,8 @@ import "./ItemPage.css";
 import demo from "./assets/demo.png";
 import Footer from "./Footer";
 import NavbarShop from "./NavbarShop";
+import { useShoppingCart } from "./ShoppingCartContext";
+import { ShoppingCart } from "./ShoppingCart";
 
 export default function ItemPage() {
   const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
@@ -12,17 +14,28 @@ export default function ItemPage() {
   const [imageSrc, setimageSrc] = useState(demo);
   const [hoveredIndex, setHoveredIndex] = useState(1);
 
+  const id = 1;
+
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart();
+
+  // const quantity = getItemQuantity(id);
+
   function handleSizeButton(size) {
     setSelectedSize(size);
   }
-  const [quantity, setQuantity] = useState(1);
+  const [quantity1, setQuantity] = useState(1);
 
   const increment = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decrement = () => {
-    if (quantity > 1) {
+    if (quantity1 > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
@@ -102,19 +115,21 @@ export default function ItemPage() {
                   <div className="quantity-button">
                     <button
                       onClick={decrement}
-                      disabled={quantity <= 1}
+                      disabled={quantity1 <= 1}
                       className="quan-plus"
                     >
                       -
                     </button>
-                    <span>{quantity}</span>
+                    <span>{quantity1}</span>
                     <button onClick={increment} className="quan-min">
                       +
                     </button>
                   </div>
                 </div>
                 <button className="addtocart">
-                  <strong>Add to Cart</strong>
+                  <strong onClick={() => increaseCartQuantity(id)}>
+                    Add to Cart
+                  </strong>
                 </button>
                 <div className="item-description">
                   <ul className="item-list">

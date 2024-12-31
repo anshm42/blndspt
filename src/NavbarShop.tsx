@@ -2,13 +2,15 @@ import React from "react";
 import "./NavbarShop.css";
 import { Navigate, useNavigate } from "react-router-dom";
 import Cart from "./assets/cart.png";
+import { useShoppingCart } from "./ShoppingCartContext";
 
 export default function NavbarShop() {
   const navigate = useNavigate();
   function handleBLND() {
     navigate("/");
   }
-  function handleCartToggle() {}
+  const { openCart, cartQuantity } = useShoppingCart();
+
   return (
     <>
       <div className="navbar-container">
@@ -24,7 +26,7 @@ export default function NavbarShop() {
         <div>
           <div
             className="cart-count"
-            onClick={handleCartToggle}
+            onClick={openCart}
             style={{ cursor: "pointer" }}
           >
             <img className="cart-icon" src={Cart} />
