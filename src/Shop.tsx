@@ -4,6 +4,7 @@ import item2 from "./assets/ig.png";
 import Footer from "./Footer";
 import "./Shop.css";
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Shop() {
   const [hover1, setHover1] = useState(true);
@@ -11,12 +12,19 @@ export default function Shop() {
   const [hover3, setHover3] = useState(true);
   const [hover4, setHover4] = useState(true);
 
+  const navigate = useNavigate();
+
   return (
     <>
       <Header />
       <div className="shop-con">
         <div className="items-con">
-          <div className="item-con-1">
+          <div
+            className="item-con-1"
+            onClick={() => {
+              navigate("/item-page");
+            }}
+          >
             <img
               className="item-png"
               src={hover1 ? item1 : item2}

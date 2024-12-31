@@ -1,5 +1,6 @@
 import { createContext, useContext, ReactNode, useState } from "react";
 import { ShoppingCart } from "./ShoppingCart";
+import { useLocalStorage } from "./useLocalStorage";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -11,6 +12,7 @@ type CartItem = {
 };
 
 type ShoppingCartContext = {
+  formatCurrency: (amount: number) => string;
   openCart: () => void;
   closeCart: () => void;
   getItemQuantity: (id: number) => number;
@@ -28,7 +30,10 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   const openCart = () => setIsOpen(true);
@@ -78,6 +83,9 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       return currItems.filter((item) => item.id !== id);
     });
   }
+  function formatCurrency(amount: number): string {
+    return `$${amount.toFixed(2)}`; // Format the number to two decimal places and prefix with $
+  }
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -89,6 +97,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         cartQuantity,
         openCart,
         closeCart,
+        formatCurrency,
       }}
     >
       {children}

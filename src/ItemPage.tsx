@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import NavbarShop from "./NavbarShop";
 import { useShoppingCart } from "./ShoppingCartContext";
 import { ShoppingCart } from "./ShoppingCart";
-
+import { Button } from "react-bootstrap";
 export default function ItemPage() {
   const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
   const [showDropdown, setShowDropdown] = useState(false);
@@ -126,11 +126,12 @@ export default function ItemPage() {
                     </button>
                   </div>
                 </div>
-                <button className="addtocart">
-                  <strong onClick={() => increaseCartQuantity(id)}>
-                    Add to Cart
-                  </strong>
-                </button>
+                <Button
+                  className="btn btn-dark"
+                  onClick={() => increaseCartQuantity(id)}
+                >
+                  Add to Cart
+                </Button>
                 <div className="item-description">
                   <ul className="item-list">
                     <li>Hoodie</li>

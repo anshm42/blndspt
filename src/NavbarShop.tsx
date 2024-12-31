@@ -30,7 +30,7 @@ export default function NavbarShop() {
             style={{ cursor: "pointer" }}
           >
             <img className="cart-icon" src={Cart} />
-            <div>5</div>
+            <div>{cartQuantity}</div>
           </div>
         </div>
       </div>
