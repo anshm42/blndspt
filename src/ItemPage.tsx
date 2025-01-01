@@ -23,8 +23,6 @@ export default function ItemPage() {
     removeFromCart,
   } = useShoppingCart();
 
-  // const quantity = getItemQuantity(id);
-
   function handleSizeButton(size) {
     setSelectedSize(size);
   }
@@ -110,22 +108,19 @@ export default function ItemPage() {
                     ))}
                   </div>
                 </div>
-                <div className="quantity-container">
-                  <div className="quantity">Quantity</div>
-                  <div className="quantity-button">
-                    <button
-                      onClick={decrement}
-                      disabled={quantity1 <= 1}
-                      className="quan-plus"
-                    >
+                <div className="quantity-container1">
+                  <div className="quantity1">Quantity</div>
+                  <div className="quantity-button1">
+                    <div className="minus quan" onClick={decrement}>
                       -
-                    </button>
-                    <span>{quantity1}</span>
-                    <button onClick={increment} className="quan-min">
+                    </div>
+                    <div className="quantity-number quan">{quantity1}</div>
+                    <div className="plus quan" onClick={increment}>
                       +
-                    </button>
+                    </div>
                   </div>
                 </div>
+
                 <Button
                   className="btn btn-dark"
                   onClick={() => increaseCartQuantity(id)}

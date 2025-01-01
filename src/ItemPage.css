@@ -147,3 +147,23 @@ button {
 footer {
   position: relative;
 }
+
+.quantity-button1 {
+  display: flex;
+  width: 15vw;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.quan {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+.minus:hover,
+.plus:hover {
+  cursor: pointer;
+  background-color: black; /* Background turns black on hover */
+  color: white;
+}
