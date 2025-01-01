@@ -1,0 +1,26 @@
+.quantity-button2 {
+  display: flex;
+  width: 200%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.quan2 {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+}
+
+.minus2:hover,
+.plus2:hover {
+  cursor: pointer;
+  background-color: black; /* Background turns black on hover */
+  color: white;
+}
+
+.me-auto {
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  justify-content: space-between;
+}
