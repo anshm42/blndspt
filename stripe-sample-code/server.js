@@ -10,7 +10,8 @@ app.use(express.json());
 const YOUR_DOMAIN = "http://localhost:3000";
 
 app.post("/create-checkout-session", async (req, res) => {
-  const { quantity1, quantity2 } = req.body; // Extract quantities from the request body
+  console.log(req.body);
+  const { quantity1, quantity2, quantity3 } = req.body; // Extract quantities from the request body
   const line_items = [];
   if (quantity1 > 0) {
     line_items.push({
@@ -24,7 +25,7 @@ app.post("/create-checkout-session", async (req, res) => {
     });
   }
 
-  // Conditionally add the second item
+  //Conditionally add the second item
   if (quantity2 > 0) {
     line_items.push({
       price: "price_1QbVwEHDuUsEP7Lq6R1qnWk6", // Second product
@@ -34,6 +35,19 @@ app.post("/create-checkout-session", async (req, res) => {
         maximum: 10,
       },
       quantity: quantity2,
+    });
+  }
+
+  //Conditionally add third item
+  if (quantity3 > 0) {
+    line_items.push({
+      price: "price_1QcanFHDuUsEP7Lq4O2h7LAy", // Third product
+      adjustable_quantity: {
+        enabled: true,
+        minimum: 1,
+        maximum: 10,
+      },
+      quantity: quantity3,
     });
   }
 

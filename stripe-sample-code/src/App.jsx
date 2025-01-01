@@ -22,6 +22,7 @@ const CheckoutForm = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const quantity1 = queryParams.get("quantity1");
   const quantity2 = queryParams.get("quantity2");
+  const quantity3 = queryParams.get("quantity3");
 
   const fetchClientSecret = useCallback(() => {
     // Create a Checkout Session
@@ -31,7 +32,7 @@ const CheckoutForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ quantity1, quantity2 }), // Pass the quantity to the backend
+      body: JSON.stringify({ quantity1, quantity2, quantity3 }), // Pass the quantity to the backend
     })
       .then((res) => res.json())
       .then((data) => data.clientSecret);
