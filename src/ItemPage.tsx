@@ -13,7 +13,7 @@ export default function ItemPage() {
   const [isFixed, setIsFixed] = useState(true);
   const [imageSrc, setimageSrc] = useState(demo);
   const [hoveredIndex, setHoveredIndex] = useState(1);
-  const [itemID, setItemID] = useState(1);
+  const [itemID, setItemID] = useState(2);
 
   const id = 1;
 
