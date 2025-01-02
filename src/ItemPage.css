@@ -30,6 +30,13 @@
   display: flex;
 }
 
+@media (max-width: 600px) {
+  .item_and_desc {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 .size-buttons {
   display: flex;
   gap: 1vw;
@@ -49,6 +56,13 @@
   transition: transform 0.2s ease; /* Smooth animation */
   border-radius: 3px;
 }
+
+@media (max-width: 600px) {
+  .item-button {
+    flex: 1;
+  }
+}
+
 .item-button:hover {
   transform: scale(1.1); /* Enlarges the button by 10% */
 }
@@ -135,10 +149,23 @@ button {
   gap: 1vh;
   padding-left: 15px;
 }
+
+@media (max-width: 600px) {
+  .pictures {
+    flex-direction: row;
+    flex: 1;
+    padding-left: 0;
+  }
+}
 .side-pic {
   width: 5vw;
   height: auto;
   border-radius: 2px;
+}
+@media (max-width: 600px) {
+  .side-pic {
+    flex: 1;
+  }
 }
 
 .item-page-container {

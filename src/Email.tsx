@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Email.css";
 
 const EmailInput = () => {
   const [email, setEmail] = useState("");
@@ -28,46 +29,18 @@ const EmailInput = () => {
   };
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div className="container-footer">
       <input
         type="email"
         placeholder="Enter your email"
         value={email}
         onChange={handleInputChange}
-        style={{
-          padding: "10px",
-          fontSize: "16px",
-          border: "1px solid #ccc",
-          borderRadius: "5px",
-          width: "300px",
-        }}
+        className="email-input"
       />
-      <button
-        onClick={handleSubmit}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          marginLeft: "10px",
-          border: "none",
-          borderRadius: "5px",
-          backgroundColor: "black",
-          color: "#fff",
-          cursor: "pointer",
-        }}
-      >
+      <button onClick={handleSubmit} className="subscribe-button">
         Subscribe
       </button>
-      {error && (
-        <p
-          style={{
-            color: "red",
-            marginTop: "10px",
-            fontSize: "14px",
-          }}
-        >
-          {error}
-        </p>
-      )}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };

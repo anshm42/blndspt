@@ -2,13 +2,26 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   display: flex;
-  padding: 20px;
   justify-content: space-around;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .footer-container1 {
+    flex-direction: column;
+    gap: 2vh;
+  }
 }
 
 .policies {
   display: flex;
   gap: 2vw;
+}
+
+@media (max-width: 600px) {
+  .policies {
+    flex-direction: column;
+  }
 }
 
 .poly1 {
@@ -20,4 +33,10 @@
 .ig-con {
   width: 3vw;
   height: auto;
+}
+
+@media (max-width: 600px) {
+  .ig-con {
+    width: 10%;
+  }
 }
