@@ -13,6 +13,7 @@ export default function ItemPage() {
   const [isFixed, setIsFixed] = useState(true);
   const [imageSrc, setimageSrc] = useState(demo);
   const [hoveredIndex, setHoveredIndex] = useState(1);
+  const [itemID, setItemID] = useState(1);
 
   const id = 1;
 
@@ -25,6 +26,13 @@ export default function ItemPage() {
 
   function handleSizeButton(size) {
     setSelectedSize(size);
+    if (size == "S") {
+      setItemID(1);
+    } else if (size == "M") {
+      setItemID(2);
+    } else if (size == "L") {
+      setItemID(3);
+    }
   }
   const [quantity1, setQuantity] = useState(1);
 
@@ -108,22 +116,10 @@ export default function ItemPage() {
                     ))}
                   </div>
                 </div>
-                <div className="quantity-container1">
-                  <div className="quantity1">Quantity</div>
-                  <div className="quantity-button1">
-                    <div className="minus quan" onClick={decrement}>
-                      -
-                    </div>
-                    <div className="quantity-number quan">{quantity1}</div>
-                    <div className="plus quan" onClick={increment}>
-                      +
-                    </div>
-                  </div>
-                </div>
 
                 <Button
                   className="btn btn-dark"
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => increaseCartQuantity(itemID)}
                 >
                   Add to Cart
                 </Button>
