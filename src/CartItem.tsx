@@ -48,6 +48,8 @@ export function CartItem({ id, quantity }: CartItemProps) {
             </span>
           )} */}
         </div>
+        <div className="text-muted">{item.size}</div>
+
         <div className="quantity-container2">
           <div className="quantity-button2">
             <div className="minus2 quan2" onClick={decrement}>
@@ -59,7 +61,6 @@ export function CartItem({ id, quantity }: CartItemProps) {
             </div>
           </div>
         </div>
-        <div>{item.size}</div>
         <div className="text-muted" style={{ fontSize: "0.75rem" }}>
           {formatCurrency(item.price)}
         </div>
