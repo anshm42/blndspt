@@ -22,6 +22,7 @@ export default function ItemPage() {
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
+    openCart,
   } = useShoppingCart();
 
   function handleSizeButton(size) {
@@ -119,7 +120,10 @@ export default function ItemPage() {
 
                 <Button
                   className="btn btn-dark"
-                  onClick={() => increaseCartQuantity(itemID)}
+                  onClick={() => {
+                    increaseCartQuantity(itemID);
+                    openCart();
+                  }}
                 >
                   Add to Cart
                 </Button>

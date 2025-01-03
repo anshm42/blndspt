@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import "./Shop.css";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useShoppingCart } from "./ShoppingCartContext";
 
 export default function Shop() {
   const [hover1, setHover1] = useState(true);
@@ -14,62 +15,40 @@ export default function Shop() {
 
   const navigate = useNavigate();
 
+  const { increaseCartQuantity, openCart } = useShoppingCart();
+
   return (
     <>
       <Header />
       <div className="shop-con">
         <div className="items-con">
-          <div
-            className="item-con-1"
-            onClick={() => {
-              navigate("/item-page");
-            }}
-          >
+          <div className="item-con-1">
             <img
               className="item-png"
               src={hover1 ? item1 : item2}
               onMouseEnter={() => setHover1(false)}
               onMouseLeave={() => setHover1(true)}
+              onClick={() => {
+                navigate("/item-page");
+              }}
             ></img>
-            <div className="item-desc">
+            <div
+              className="item-desc"
+              onClick={() => {
+                navigate("/item-page");
+              }}
+            >
               <div className="itemtitle">GORDONS HOODIE</div>
               <div className="item-price">$130</div>
             </div>
-          </div>
-          <div className="item-con-1">
-            <img
-              className="item-png"
-              src={hover2 ? item1 : item2}
-              onMouseEnter={() => setHover2(false)}
-              onMouseLeave={() => setHover2(true)}
-            ></img>{" "}
-            <div className="item-desc">
-              <div className="itemtitle">GORDONS HOODIE</div>
-              <div className="item-price">$130</div>
-            </div>
-          </div>
-          <div className="item-con-1">
-            <img
-              className="item-png"
-              src={hover3 ? item1 : item2}
-              onMouseEnter={() => setHover3(false)}
-              onMouseLeave={() => setHover3(true)}
-            ></img>{" "}
-            <div className="item-desc">
-              <div className="itemtitle">GORDONS HOODIE</div>
-              <div className="item-price">$130</div>
-            </div>
-          </div>
-          <div className="item-con-1">
-            <img
-              className="item-png"
-              src={hover4 ? item1 : item2}
-              onMouseEnter={() => setHover4(false)}
-              onMouseLeave={() => setHover4(true)}
-            ></img>{" "}
-            <div className="item-desc">
-              <div className="itemtitle">GORDONS HOODIE</div>
-              <div className="item-price">$130</div>
+            <div
+              className="cartshop"
+              onClick={() => {
+                increaseCartQuantity(2);
+                openCart();
+              }}
+            >
+              Add to Cart
             </div>
           </div>
         </div>

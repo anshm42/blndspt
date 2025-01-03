@@ -19,6 +19,8 @@ export default function NavbarShop() {
           onClick={handleBLND}
           style={{
             cursor: "pointer",
+            fontWeight: "900",
+            fontFamily: "Times New Roman",
           }}
         >
           [BLND]SPT+
