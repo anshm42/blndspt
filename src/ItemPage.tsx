@@ -45,7 +45,7 @@ export default function ItemPage() {
     setShowDropdown1((prevShowDropdown) => !prevShowDropdown);
   }
 
-  const handleSwitch = (src) => {
+  const handleSwitch = (src: string) => {
     setimageSrc(src);
   };
 
@@ -101,7 +101,9 @@ export default function ItemPage() {
                         className={`item-button ${
                           selectedSize === size ? "pressed" : ""
                         }`}
-                        onClick={() => handleSizeButton(size)}
+                        onClick={() =>
+                          handleSizeButton(size as "S" | "M" | "L")
+                        }
                       >
                         {size}
                       </button>
