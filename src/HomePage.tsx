@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="video">
         <video autoPlay loop muted playsInline className="background-video">
           <source src={Video} type="video/mp4" />
-          Your browser does not support the video tag.
+          Your browser does not support the video tag
         </video>
         <div className="menu-container">
           <div className="logo">BLNDSPT+</div>
