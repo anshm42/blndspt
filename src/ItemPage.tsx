@@ -6,17 +6,18 @@ import NavbarShop from "./NavbarShop";
 import { useShoppingCart } from "./ShoppingCartContext";
 import { Button } from "react-bootstrap";
 export default function ItemPage() {
-  const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
+  const [selectedSize, setSelectedSize] = useState<"S" | "M" | "L" | null>(
+    null
+  ); // Tracks the selected button
   const [showDropdown, setShowDropdown] = useState(false);
   const [showDropdown1, setShowDropdown1] = useState(false);
-  const [isFixed, setIsFixed] = useState(true);
   const [imageSrc, setimageSrc] = useState(demo);
   const [hoveredIndex, setHoveredIndex] = useState(1);
   const [itemID, setItemID] = useState(2);
 
   const { increaseCartQuantity, openCart } = useShoppingCart();
 
-  function handleSizeButton(size) {
+  function handleSizeButton(size: "S" | "M" | "L") {
     setSelectedSize(size);
     if (size == "S") {
       setItemID(1);
@@ -26,7 +27,6 @@ export default function ItemPage() {
       setItemID(3);
     }
   }
-  const [quantity1, setQuantity] = useState(1);
 
   // const increment = () => {
   //   setQuantity((prevQuantity) => prevQuantity + 1);
