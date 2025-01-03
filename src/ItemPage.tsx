@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ItemPage.css";
 import demo from "./assets/demo.png";
 import Footer from "./Footer";
 import NavbarShop from "./NavbarShop";
 import { useShoppingCart } from "./ShoppingCartContext";
-import { ShoppingCart } from "./ShoppingCart";
 import { Button } from "react-bootstrap";
 export default function ItemPage() {
   const [selectedSize, setSelectedSize] = useState(null); // Tracks the selected button
@@ -15,15 +14,7 @@ export default function ItemPage() {
   const [hoveredIndex, setHoveredIndex] = useState(1);
   const [itemID, setItemID] = useState(2);
 
-  const id = 1;
-
-  const {
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
-    openCart,
-  } = useShoppingCart();
+  const { increaseCartQuantity, openCart } = useShoppingCart();
 
   function handleSizeButton(size) {
     setSelectedSize(size);
@@ -37,15 +28,15 @@ export default function ItemPage() {
   }
   const [quantity1, setQuantity] = useState(1);
 
-  const increment = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
+  // const increment = () => {
+  //   setQuantity((prevQuantity) => prevQuantity + 1);
+  // };
 
-  const decrement = () => {
-    if (quantity1 > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
+  // const decrement = () => {
+  //   if (quantity1 > 1) {
+  //     setQuantity((prevQuantity) => prevQuantity - 1);
+  //   }
+  // };
 
   function handleDropdown() {
     setShowDropdown((prevShowDropdown) => !prevShowDropdown);

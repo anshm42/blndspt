@@ -1,7 +1,4 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Checkout from "../stripe-sample-code/src/App.jsx";
 
 export default function Cart() {
   const [quantity1, setQuantity1] = useState(1); // Default quantity for item 1

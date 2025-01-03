@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Homepage.css";
 import Video from "./assets/placeholder.mp4";

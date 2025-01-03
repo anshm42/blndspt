@@ -1,6 +1,5 @@
-import React from "react";
 import "./NavbarShop.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cart from "./assets/cart.png";
 import { useShoppingCart } from "./ShoppingCartContext";
 

@@ -4,14 +4,14 @@ import item2 from "./assets/ig.png";
 import Footer from "./Footer";
 import "./Shop.css";
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "./ShoppingCartContext";
 
 export default function Shop() {
   const [hover1, setHover1] = useState(true);
-  const [hover2, setHover2] = useState(true);
-  const [hover3, setHover3] = useState(true);
-  const [hover4, setHover4] = useState(true);
+  // const [hover2, setHover2] = useState(true);
+  // const [hover3, setHover3] = useState(true);
+  // const [hover4, setHover4] = useState(true);
 
   const navigate = useNavigate();
 

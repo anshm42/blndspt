@@ -1,4 +1,3 @@
-import React from "react";
 import Email from "./Email";
 import "./Footer.css";
 import IG from "./assets/ig.png";
