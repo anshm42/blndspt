@@ -13,7 +13,14 @@ export default function NavbarShop() {
   return (
     <>
       <div className="navbar-container">
-        <div>Shop</div>
+        <div
+          onClick={() => {
+            navigate("/shop");
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          Shop
+        </div>
         <h1
           onClick={handleBLND}
           style={{
