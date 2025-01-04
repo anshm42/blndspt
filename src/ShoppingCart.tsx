@@ -28,7 +28,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
 
   useEffect(() => {
     if (checkoutTriggered) {
-      const checkoutUrl = `http://localhost:3000/checkout?quantity1=${quantity1}&quantity2=${quantity2}&quantity3=${quantity3}`;
+      const checkoutUrl = `http://blndspt.onrender.com/checkout?quantity1=${quantity1}&quantity2=${quantity2}&quantity3=${quantity3}`;
       window.location.href = checkoutUrl; // Redirect to checkout
     }
   }, [checkoutTriggered, quantity1, quantity2, quantity3]);
