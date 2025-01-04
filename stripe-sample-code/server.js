@@ -74,6 +74,13 @@ app.get("/session-status", async (req, res) => {
   });
 });
 
+app.use(express.static(path.join(__dirname, "build")));
+
+// Handle all other routes by sending index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 const port = process.env.PORT || 4242;
 
 app.listen(port, () => console.log(`Running on port ${port}`));
